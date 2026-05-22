@@ -9,6 +9,7 @@ function Authority() {
     <section style={{ padding: "0", marginTop: -28, position: "relative", zIndex: 2 }}>
       <div className="container">
         <div
+          className="authority-strip"
           style={{
             background: "var(--paper-50)",
             borderRadius: "var(--r-pill)",
@@ -34,7 +35,7 @@ function Authority() {
               +200 corredores acompañados
             </span>
           </div>
-          <span style={{
+          <span className="authority-divider" style={{
             width: 1, height: 22,
             background: "var(--paper-300)",
             display: "inline-block",

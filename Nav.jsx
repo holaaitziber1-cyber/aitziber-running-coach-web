@@ -92,26 +92,28 @@ function Nav({ onNavigate }) {
           </div>
         </a>
         <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-          {[
-            ["método", "metodo"],
-            ["servicios", "planes"],
-            ["resultados", "resultados"],
-            ["sobre mí", "sobre"],
-            ["blog", "blog"],
-            ["FAQ", "faq"],
-          ].map(([label, id]) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              style={linkStyle}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--paper-200)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
-              onClick={(e) => { e.preventDefault(); onNavigate?.(id); }}
-            >
-              {label}
-            </a>
-          ))}
-          <a href="#contacto" className="btn btn-primary" style={{ marginLeft: 12 }}
+          <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 4 }}>
+            {[
+              ["método", "metodo"],
+              ["servicios", "planes"],
+              ["resultados", "resultados"],
+              ["sobre mí", "sobre"],
+              ["blog", "blog"],
+              ["FAQ", "faq"],
+            ].map(([label, id]) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                style={linkStyle}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "var(--paper-200)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                onClick={(e) => { e.preventDefault(); onNavigate?.(id); }}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+          <a href="#contacto" className="btn btn-primary nav-cta" style={{ marginLeft: 12 }}
             onClick={(e) => { e.preventDefault(); onNavigate?.("contacto"); }}
           >
             Quiero empezar <span style={{ fontSize: 18 }}>→</span>

@@ -136,7 +136,7 @@ function Stats() {
           padding: "8px 8px",
           overflow: "hidden",
         }}>
-          <div style={{
+          <div className="pr-header" style={{
             display: "grid",
             gridTemplateColumns: "1fr 1.1fr 1.1fr 1fr 0.8fr",
             gap: 0,
@@ -158,6 +158,7 @@ function Stats() {
           {prs.map((row, k) => (
             <div
               key={k}
+              className="pr-row"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1.1fr 1.1fr 1fr 0.8fr",
@@ -167,7 +168,7 @@ function Stats() {
                 borderBottom: k === prs.length - 1 ? "none" : "1px solid var(--divider)",
               }}
             >
-              <span style={{
+              <span className="pr-dist" style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 700,
                 fontSize: 17,
@@ -175,7 +176,7 @@ function Stats() {
                 color: "var(--fg-strong)",
               }}>{row.dist}</span>
 
-              <span style={{
+              <span className="pr-before" style={{
                 fontFamily: "var(--font-mono)",
                 fontVariantNumeric: "tabular-nums",
                 fontWeight: 600,
@@ -185,7 +186,7 @@ function Stats() {
                 textDecorationColor: "var(--paper-300)",
               }}>{row.before}</span>
 
-              <span style={{
+              <span className="pr-after" style={{
                 fontFamily: "var(--font-mono)",
                 fontVariantNumeric: "tabular-nums",
                 fontWeight: 700,
@@ -194,13 +195,13 @@ function Stats() {
                 color: "var(--fg-strong)",
               }}>{row.after}</span>
 
-              <span style={{
+              <span className="pr-who" style={{
                 fontFamily: "var(--font-body)",
                 fontSize: 14,
                 color: "var(--fg)",
               }}>{row.who}</span>
 
-              <span style={{
+              <span className="pr-delta" style={{
                 fontFamily: "var(--font-mono)",
                 fontVariantNumeric: "tabular-nums",
                 fontWeight: 700,

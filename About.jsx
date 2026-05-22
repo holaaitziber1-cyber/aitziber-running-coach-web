@@ -99,6 +99,7 @@ function About() {
               src="assets/logo-mark-transparent.png"
               alt=""
               aria-hidden
+              className="about-watermark"
               style={{
                 position: "absolute",
                 top: -28,

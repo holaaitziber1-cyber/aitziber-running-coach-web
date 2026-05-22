@@ -272,6 +272,7 @@ function Hero({ showScriptNote = true }) {
 
               {/* BOTTOM chip — session summary */}
               <div
+                className="hero-meta-3"
                 style={{
                   position: "absolute",
                   left: 16, bottom: 16, right: 16,
@@ -316,6 +317,7 @@ function Hero({ showScriptNote = true }) {
 
             {/* SMALL OVERLAPPING PHOTO — trail */}
             <div
+              className="hero-overlap-photo"
               style={{
                 position: "absolute",
                 left: -52,
@@ -344,7 +346,7 @@ function Hero({ showScriptNote = true }) {
             </div>
 
             {/* SCRIPT NOTE — handwritten */}
-            {showScriptNote && <div style={{
+            {showScriptNote && <div className="hero-script-note" style={{
               position: "absolute",
               top: -28, right: -8,
               fontFamily: "var(--font-script)",
