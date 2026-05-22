@@ -48,10 +48,13 @@ const blurStyle = (e) => {
   e.target.style.boxShadow = "none";
 };
 
+const WEB3FORMS_KEY = "e9a2f01d-6903-4eb0-93a8-1d82988c4eb0";
+
 function ContactForm() {
   const [interest, setInterest] = useState("integrado");
   const [distance, setDistance] = useState("21K");
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const [errorMsg, setErrorMsg] = useState("");
 
   const interests = [
     ["integrado",  "Entrenamiento + Nutrición"],
@@ -60,15 +63,38 @@ function ContactForm() {
     ["puntual",    "Consulta puntual"],
     ["nose",       "No lo tengo claro"],
   ];
+  const interestLabel = (id) => (interests.find((i) => i[0] === id) || [])[1] || id;
 
   const distances = ["10K", "21K", "42K", "Trail", "Iniciación", "Otro"];
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+    setErrorMsg("");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.set("distancia", distance);
+    data.set("interes", interestLabel(interest));
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+        setErrorMsg(json.message || "No se ha podido enviar. Prueba otra vez en un momento o escríbeme directamente a holaaitziber1@gmail.com.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Sin conexión. Escríbeme directamente a holaaitziber1@gmail.com.");
+    }
   };
 
-  if (submitted) {
+  if (status === "sent") {
     return (
       <section id="contacto" style={{ background: "var(--paper-200)" }}>
         <div className="container">
@@ -131,7 +157,7 @@ function ContactForm() {
               — Aitzi
             </p>
             <button
-              onClick={() => setSubmitted(false)}
+              onClick={() => setStatus("idle")}
               className="btn btn-ghost"
               style={{ marginTop: 24, color: "var(--espresso-800)" }}
             >
@@ -252,13 +278,22 @@ function ContactForm() {
               gap: 22,
             }}
           >
+            {/* web3forms config — hidden */}
+            <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+            <input type="hidden" name="subject" value="Nuevo contacto desde aitziberrunningcoach.com" />
+            <input type="hidden" name="from_name" value="Web Aitziber Running Coach" />
+            <input type="hidden" name="distancia" value={distance} />
+            <input type="hidden" name="interes" value={interestLabel(interest)} />
+            {/* honeypot — anti-spam */}
+            <input type="checkbox" name="botcheck" tabIndex="-1" style={{ display: "none" }} aria-hidden="true" />
+
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
               <Field label="Nombre" required>
-                <input type="text" required placeholder="Aitziber" style={inputStyle}
+                <input type="text" name="nombre" required placeholder="Aitziber" style={inputStyle}
                        onFocus={focusStyle} onBlur={blurStyle} />
               </Field>
               <Field label="Email" required>
-                <input type="email" required placeholder="tu@email.com" style={inputStyle}
+                <input type="email" name="email" required placeholder="tu@email.com" style={inputStyle}
                        onFocus={focusStyle} onBlur={blurStyle} />
               </Field>
             </div>
@@ -332,6 +367,7 @@ function ContactForm() {
               required
             >
               <textarea
+                name="mensaje"
                 required
                 rows={5}
                 placeholder="Estoy preparando mi primera media maratón en abril, llevo 8 meses corriendo, mi mejor 10K es 52 minutos, me cuesta la energía en las tiradas largas y..."
@@ -357,8 +393,34 @@ function ContactForm() {
               </span>
             </label>
 
-            <button type="submit" className="btn btn-primary" style={{ marginTop: 4, height: 52, fontSize: 16 }}>
-              Enviar mi caso <span style={{ fontSize: 18 }}>→</span>
+            {status === "error" && (
+              <div style={{
+                background: "color-mix(in oklab, var(--clay-300) 30%, var(--paper-50))",
+                border: "1px solid var(--clay-500)",
+                color: "var(--clay-700)",
+                borderRadius: "var(--r-md)",
+                padding: "12px 14px",
+                fontFamily: "var(--font-body)",
+                fontSize: 14,
+                lineHeight: 1.5,
+              }}>
+                {errorMsg}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={status === "sending"}
+              style={{
+                marginTop: 4,
+                height: 52,
+                fontSize: 16,
+                opacity: status === "sending" ? 0.6 : 1,
+                cursor: status === "sending" ? "wait" : "pointer",
+              }}
+            >
+              {status === "sending" ? "Enviando…" : (<>Enviar mi caso <span style={{ fontSize: 18 }}>→</span></>)}
             </button>
           </form>
         </div>
