@@ -1,0 +1,245 @@
+/* ============================================================
+   AITZIBER RUNNING COACH — colors & type
+   Tokens for the brand. Import this file or copy the :root vars.
+   ============================================================ */
+
+/* ---------- Web fonts ---------- */
+/* Display: Bricolage Grotesque — confident, slightly condensed display sans.
+   Matches the chiseled, athletic feel of the AITZIBER wordmark.
+   Body: Inter Tight — a quiet, modern reading face that pairs warmly with the display.
+   Numerals: Manrope — used for stats, paces, splits (good tabular figures). */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600;700&family=Manrope:wght@500;600;700&family=Caveat:wght@500;600;700&display=swap");
+
+:root {
+
+  /* ---------- Brand colors (extracted from the logo) ---------- */
+
+  /* Espresso — primary text + dark UI surfaces. Sampled from the lion outline. */
+  --espresso-900: #1F140A;        /* deepest */
+  --espresso-800: #2A1B10;        /* dark surface */
+  --espresso-700: #3F2A1A;        /* primary brand brown */
+  --espresso-600: #5A3E27;
+  --espresso-500: #7A5638;
+
+  /* Camel — the lion's face. Warm tan, sand, leather. */
+  --camel-100: #F1E4CD;
+  --camel-200: #E4D2B0;
+  --camel-300: #D2BA8E;
+  --camel-400: #C8AC7C;          /* primary tan */
+  --camel-500: #B6986D;
+  --camel-600: #8A6B45;          /* deep tan */
+
+  /* Paper — warm off-white surfaces. The light background of the logo. */
+  --paper-50:  #FBF8F2;
+  --paper-100: #F6F1E8;          /* primary surface */
+  --paper-200: #EEE7D8;          /* card / lifted */
+  --paper-300: #E4DAC4;          /* divider / border */
+
+  /* Glacier — the lion's blue eye. Cool counterpoint used VERY sparingly:
+     pace highlights, focus rings, link accents on dark surfaces. */
+  --glacier-100: #DCEEF5;
+  --glacier-300: #BADCE7;
+  --glacier-500: #92C3D7;        /* the eye */
+  --glacier-700: #5A99B0;
+
+  /* Clay — accent for warnings, heat zones, effort levels. Earth-warm. */
+  --clay-300:  #E6A684;
+  --clay-500:  #C46A3C;
+  --clay-700:  #8E4520;
+
+  /* Moss — accent for "done", recovery, healthy markers. Olive-green, never neon. */
+  --moss-300:  #CFD3A8;
+  --moss-500:  #8A9560;
+  --moss-700:  #5C6638;
+
+  /* ---------- Semantic color roles ---------- */
+
+  --bg:               var(--paper-100);
+  --bg-elevated:      var(--paper-50);
+  --bg-card:          #FFFFFF;
+  --bg-card-warm:     var(--paper-200);
+  --bg-inverse:       var(--espresso-800);
+
+  --fg:               var(--espresso-700);   /* body */
+  --fg-strong:        var(--espresso-900);   /* headings */
+  --fg-muted:         var(--espresso-500);   /* meta, captions */
+  --fg-subtle:        var(--camel-600);      /* labels on warm surfaces */
+  --fg-inverse:       var(--paper-50);
+  --fg-on-tan:        var(--espresso-800);
+
+  --border:           var(--paper-300);
+  --border-strong:    var(--camel-500);
+  --divider:          rgba(63, 42, 26, 0.10);
+
+  --accent:           var(--camel-600);       /* primary brand accent */
+  --accent-cool:      var(--glacier-500);     /* secondary "cool" accent */
+  --success:          var(--moss-500);
+  --warning:          var(--clay-500);
+  --danger:           #B23B2A;
+
+  --ring:             color-mix(in oklab, var(--camel-600) 50%, transparent);
+
+  /* ---------- Type system ---------- */
+
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", system-ui, sans-serif;
+  --font-body:    "Inter Tight", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono:    "Manrope", ui-monospace, "SF Mono", monospace;
+  --font-script:  "Caveat", "Brush Script MT", cursive;    /* signature / hand-written notes */
+
+  /* Scale (modular, 1.250 minor third on body, larger on display). */
+  --fs-xs:    12px;
+  --fs-sm:    14px;
+  --fs-base:  16px;
+  --fs-md:    18px;
+  --fs-lg:    20px;
+  --fs-xl:    24px;
+  --fs-2xl:   32px;
+  --fs-3xl:   44px;
+  --fs-4xl:   60px;
+  --fs-5xl:   84px;
+  --fs-6xl:   120px;
+
+  --lh-tight:   1.05;
+  --lh-snug:    1.18;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.6;
+
+  --ls-tight:   -0.025em;
+  --ls-normal:  0;
+  --ls-wide:    0.06em;
+  --ls-display: -0.02em;
+  --ls-eyebrow: 0.18em;
+
+  /* ---------- Radii ---------- */
+  --r-xs:   4px;
+  --r-sm:   8px;
+  --r-md:   14px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-pill: 999px;
+
+  /* ---------- Shadows / elevation ---------- */
+  /* Warm, soft shadows tinted with espresso so cards feel "on paper". */
+  --shadow-xs: 0 1px 2px rgba(63, 42, 26, 0.06);
+  --shadow-sm: 0 2px 6px rgba(63, 42, 26, 0.07), 0 1px 2px rgba(63, 42, 26, 0.05);
+  --shadow-md: 0 8px 20px -8px rgba(63, 42, 26, 0.18), 0 2px 6px rgba(63, 42, 26, 0.06);
+  --shadow-lg: 0 24px 48px -16px rgba(63, 42, 26, 0.22), 0 4px 12px rgba(63, 42, 26, 0.08);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(63,42,26,0.08);
+
+  /* ---------- Spacing scale ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+
+  /* ---------- Motion ---------- */
+  --ease-out:   cubic-bezier(0.2, 0.7, 0.2, 1);     /* default UI */
+  --ease-in:    cubic-bezier(0.6, 0.05, 0.8, 0.3);
+  --ease-stride: cubic-bezier(0.4, 0.0, 0.2, 1);    /* used for run-cadence animations */
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 560ms;
+}
+
+/* ============================================================
+   Semantic type styles — apply directly via class.
+   ============================================================ */
+
+.t-eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.t-display, h1.t-display {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-4xl), 7vw, var(--fs-6xl));
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--fg-strong);
+  text-wrap: balance;
+}
+
+.t-h1, h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--fg-strong);
+  text-wrap: balance;
+}
+
+.t-h2, h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  color: var(--fg-strong);
+  text-wrap: balance;
+}
+
+.t-h3, h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  color: var(--fg-strong);
+}
+
+.t-lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  line-height: var(--lh-relaxed);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.t-body, p {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 400;
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.t-meta {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--fg-muted);
+}
+
+.t-numeric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg-strong);
+}
+
+.t-script {
+  font-family: var(--font-script);
+  font-size: var(--fs-xl);
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* ============================================================
+   Page reset (light) — opt in by importing this file in a doc.
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }

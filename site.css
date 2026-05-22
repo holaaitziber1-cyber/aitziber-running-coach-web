@@ -1,0 +1,96 @@
+/* Site-local styles for the Aitziber Running Coach website UI kit. */
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+}
+
+#root { display: block; }
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+@media (max-width: 720px) {
+  .container { padding: 0 20px; }
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 0; cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  height: 44px; padding: 0 22px;
+  border-radius: var(--r-pill);
+  transition: transform var(--dur-1) var(--ease-out),
+              background var(--dur-2) var(--ease-out);
+  text-decoration: none;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--espresso-800); color: var(--paper-50); box-shadow: var(--shadow-sm), var(--shadow-inset); }
+.btn-primary:hover { background: var(--espresso-600); transform: translateY(-1px); }
+.btn-cool { background: var(--glacier-500); color: var(--espresso-900); box-shadow: var(--shadow-sm); }
+.btn-cool:hover { background: var(--glacier-300); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--espresso-800); padding: 0 16px; }
+.btn-ghost:hover { text-decoration: underline; text-underline-offset: 4px; }
+.btn-on-dark { background: var(--paper-50); color: var(--espresso-900); }
+.btn-on-dark:hover { background: var(--camel-200); transform: translateY(-1px); }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--camel-600);
+}
+.eyebrow.on-dark { color: var(--camel-400); }
+
+section { padding: 96px 0; }
+@media (max-width: 720px) { section { padding: 64px 0; } }
+
+.script-note {
+  font-family: var(--font-script);
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* Photo placeholder — used when there's no real imagery yet.
+   Renders as a warm pattern reminiscent of trail / topography. */
+.placeholder-photo {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 25%, color-mix(in oklab, var(--clay-300) 70%, transparent) 0%, transparent 35%),
+    radial-gradient(circle at 80% 15%, color-mix(in oklab, var(--camel-300) 80%, transparent) 0%, transparent 45%),
+    radial-gradient(circle at 60% 80%, color-mix(in oklab, var(--espresso-600) 90%, transparent) 0%, transparent 55%),
+    linear-gradient(135deg, var(--camel-500), var(--espresso-700) 75%);
+  overflow: hidden;
+  isolation: isolate;
+}
+.placeholder-photo::before {
+  /* Topographic line pattern */
+  content: "";
+  position: absolute; inset: -10%;
+  background:
+    repeating-radial-gradient(circle at 30% 70%, transparent 0 22px, rgba(31,20,10,0.12) 22px 23px),
+    repeating-radial-gradient(circle at 75% 35%, transparent 0 16px, rgba(31,20,10,0.10) 16px 17px);
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+.placeholder-photo::after {
+  /* film grain */
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+}
+.placeholder-photo .ph-label {
+  position: absolute; bottom: 14px; left: 16px;
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--paper-50);
+  opacity: 0.75;
+}
