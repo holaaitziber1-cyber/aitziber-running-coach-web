@@ -205,7 +205,7 @@ function Hero({ showScriptNote = true }) {
               }}
             >
               <img
-                src="assets/photos/race-urban-white.jpg"
+                src="race-urban-white.jpg"
                 alt="Aitziber corriendo el maratón de Zúrich"
                 style={{
                   width: "100%",
@@ -333,7 +333,7 @@ function Hero({ showScriptNote = true }) {
               }}
             >
               <img
-                src="assets/photos/trail-uphill.jpg"
+                src="trail-uphill.jpg"
                 alt="Aitziber subiendo trail de montaña"
                 style={{
                   width: "100%",

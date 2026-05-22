@@ -27,7 +27,7 @@ function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
               <img
-                src="assets/logo-mark-transparent.png"
+                src="logo-mark-transparent.png"
                 alt="Aitziber"
                 style={{ width: 56, height: 56 }}
               />

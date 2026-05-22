@@ -144,7 +144,7 @@ function PlanCards() {
                 {/* watermark inside featured card */}
                 {isDark && (
                   <img
-                    src="assets/logo-mark-transparent.png"
+                    src="logo-mark-transparent.png"
                     alt=""
                     aria-hidden
                     style={{

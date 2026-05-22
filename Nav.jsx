@@ -69,7 +69,7 @@ function Nav({ onNavigate }) {
           onClick={(e) => { e.preventDefault(); onNavigate?.("top"); }}
         >
           <img
-            src="assets/logo-mark-transparent.png"
+            src="logo-mark-transparent.png"
             alt="Aitziber"
             style={{ width: 40, height: 40, display: "block" }}
           />
