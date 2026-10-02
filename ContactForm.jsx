@@ -143,9 +143,9 @@ function ContactForm() {
               marginRight: "auto",
               textWrap: "pretty",
             }}>
-              Voy a leer tu situación con calma y te escribiré un correo
-              personal con los siguientes pasos. Nos vemos pronto en una zancada
-              cualquiera.
+              Voy a leer tu situación con calma y te contactaré personalmente
+              por WhatsApp o email con los siguientes pasos. Nos vemos pronto en
+              una zancada cualquiera.
             </p>
             <p style={{
               fontFamily: "var(--font-script)",
@@ -297,6 +297,20 @@ function ContactForm() {
                        onFocus={focusStyle} onBlur={blurStyle} />
               </Field>
             </div>
+
+            <Field label="Teléfono / WhatsApp" required>
+              <input
+                type="tel"
+                name="telefono"
+                required
+                autoComplete="tel"
+                inputMode="tel"
+                placeholder="612 345 678"
+                style={inputStyle}
+                onFocus={focusStyle}
+                onBlur={blurStyle}
+              />
+            </Field>
 
             {/* Tipo de objetivo — chips */}
             <Field label="Tu distancia / objetivo">
