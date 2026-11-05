@@ -108,7 +108,7 @@ function Footer() {
           <span style={{ display: "inline-flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
             <a href="aviso-legal.html" style={{ color: "var(--camel-300)", textDecoration: "underline" }}>Aviso legal</a>
             <span aria-hidden>·</span>
-            <a href="privacidad-media-maraton.html" style={{ color: "var(--camel-300)", textDecoration: "underline" }}>Privacidad de compras</a>
+            <a href="privacidad-media-maraton.html" style={{ color: "var(--camel-300)", textDecoration: "underline" }}>Privacidad</a>
           </span>
         </div>
       </div>
