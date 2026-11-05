@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2A1B10">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Plan Media Maratón 12 semanas · Aitziber Running Coach</title>
+  <meta name="description" content="Programa autoguiado de 12 semanas para preparar tu media maratón. Running, fuerza y mentalidad en TrainingPeaks por 80 € en pago único.">
+  <link rel="icon" href="logo-mark-transparent.png">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper-100); }
+    .mm-container { width:min(1120px,calc(100% - 48px)); margin-inline:auto; }
+    .mm-topbar { background:var(--paper-100); border-bottom:1px solid var(--paper-300); position:sticky; top:0; z-index:20; backdrop-filter:blur(12px); }
+    .mm-nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .mm-brand { display:flex; align-items:center; gap:13px; color:var(--espresso-800); text-decoration:none; }
+    .mm-brand img { width:48px; height:48px; object-fit:contain; }
+    .mm-brand strong { display:block; font-family:var(--font-display); font-size:17px; letter-spacing:.02em; }
+    .mm-brand small { display:block; font-size:10px; font-weight:700; letter-spacing:.22em; color:var(--camel-600); }
+    .mm-back { color:var(--espresso-700); font-weight:700; font-size:14px; text-decoration:none; }
+    .mm-hero { padding:86px 0 72px; background:var(--espresso-900); color:var(--paper-50); position:relative; overflow:hidden; }
+    .mm-hero::before { content:""; position:absolute; inset:-20% -15% 0 30%; background:radial-gradient(ellipse at 70% 50%,rgba(200,172,124,.20),transparent 62%); pointer-events:none; }
+    .mm-hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:66px; align-items:center; position:relative; }
+    .mm-eyebrow { font:700 12px var(--font-display); letter-spacing:.18em; text-transform:uppercase; color:var(--camel-400); }
+    .mm-hero h1 { color:var(--paper-50); font:800 clamp(48px,6.2vw,86px)/.98 var(--font-display); letter-spacing:-.04em; margin:18px 0 24px; }
+    .mm-hero h1 em { color:var(--camel-300); font-style:normal; }
+    .mm-subtitle { color:var(--camel-100); font:400 19px/1.65 var(--font-body); margin:0; max-width:620px; }
+    .mm-tags { display:flex; flex-wrap:wrap; gap:8px; margin:26px 0 34px; }
+    .mm-tag { display:inline-block; border:1px solid rgba(246,241,232,.24); padding:9px 13px; border-radius:100px; color:var(--paper-50); font:600 13px var(--font-display); }
+    .mm-price-line { display:flex; align-items:center; gap:22px; margin:18px 0 12px; }
+    .mm-price { color:var(--paper-50); font:800 53px/1 var(--font-display); letter-spacing:-.04em; }
+    .mm-price-caption { color:var(--camel-200); font-size:13px; line-height:1.4; }
+    .mm-btn { display:inline-flex; align-items:center; justify-content:center; padding:18px 29px; border-radius:100px; min-height:58px; text-decoration:none; background:var(--camel-300); color:var(--espresso-900); font:800 15px var(--font-display); box-shadow:0 8px 25px rgba(0,0,0,.15); transition:transform .2s,background .2s; text-align:center; }
+    .mm-btn:hover { transform:translateY(-2px); background:var(--paper-50); }
+    .mm-btn:focus-visible { outline:3px solid var(--glacier-500); outline-offset:4px; }
+    .mm-btn-dark { background:var(--espresso-800); color:var(--paper-50); box-shadow:none; }
+    .mm-btn-dark:hover { background:var(--espresso-700); color:var(--paper-50); }
+    .mm-micro { display:block; color:var(--camel-200); font-size:12px; line-height:1.6; margin-top:13px; }
+    .mm-photo { min-height:510px; position:relative; border-radius:28px; overflow:hidden; background:var(--espresso-600); box-shadow:0 28px 70px rgba(0,0,0,.22); }
+    .mm-photo img { width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center; }
+    .mm-photo::after { content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(31,20,10,.78)); }
+    .mm-photo-label { z-index:1;position:absolute;bottom:24px;left:25px;right:25px;color:white;font:700 19px/1.25 var(--font-display); }
+    .mm-section { padding:86px 0; }
+    .mm-section h2 { font:800 clamp(34px,4vw,53px)/1.06 var(--font-display);letter-spacing:-.025em;margin:12px 0 17px;color:var(--espresso-900); }
+    .mm-lead { font-size:17px;line-height:1.7;max-width:760px;margin:0;color:var(--espresso-700); }
+    .mm-cards { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px; }
+    .mm-card { background:white;border:1px solid var(--paper-300);border-radius:22px;padding:30px 26px;box-shadow:var(--shadow-sm); }
+    .mm-card-kicker { font:800 12px var(--font-display);letter-spacing:.16em;color:var(--camel-600); }
+    .mm-card h3 { font:700 23px/1.14 var(--font-display);color:var(--espresso-900);margin:18px 0 12px; }
+    .mm-card p { line-height:1.6;font-size:15px;margin:0;color:var(--espresso-700); }
+    .mm-warm { background:var(--paper-200); }
+    .mm-two { display:grid;grid-template-columns:.95fr 1.05fr;gap:55px;align-items:start; }
+    .mm-steps { display:grid; gap:18px; }
+    .mm-step { display:flex;gap:17px;align-items:start;background:var(--paper-50);border:1px solid var(--paper-300);border-radius:18px;padding:21px; }
+    .mm-step-num { background:var(--espresso-800);color:white;min-width:34px;height:34px;display:grid;place-items:center;border-radius:50%;font:700 13px var(--font-display); }
+    .mm-step h3 { font:700 18px var(--font-display);margin:0 0 8px;color:var(--espresso-900); }
+    .mm-step p { font:400 14px/1.6 var(--font-body);margin:0; }
+    .mm-callout { border-left:4px solid var(--camel-500);background:white;padding:18px 22px;margin-top:27px;border-radius:0 14px 14px 0;line-height:1.6;font-size:14px; }
+    .mm-list { list-style:none;padding:0;margin:25px 0;display:grid;gap:15px; }
+    .mm-list li { display:flex;gap:12px;align-items:start;font-size:16px;line-height:1.45; }
+    .mm-list li::before { content:"✓";border-radius:100%;background:var(--moss-300);color:var(--espresso-800);display:inline-grid;place-items:center;flex:none;width:23px;height:23px;font-weight:800; }
+    .mm-faq { display:grid;gap:12px;margin-top:28px; }
+    .mm-faq details { background:var(--paper-50);border:1px solid var(--paper-300);border-radius:16px;padding:20px 23px; }
+    .mm-faq summary { cursor:pointer;font:700 17px var(--font-display);color:var(--espresso-900); }
+    .mm-faq p { margin:13px 0 0;line-height:1.65;font-size:15px; }
+    .mm-buy { background:var(--espresso-800);padding:70px 0;color:var(--paper-50); }
+    .mm-buy-inner { display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center; }
+    .mm-buy h2 { color:var(--paper-50);font:800 clamp(32px,3.6vw,50px)/1.06 var(--font-display);margin:13px 0; }
+    .mm-buy p { color:var(--camel-100);line-height:1.6;margin:0;max-width:680px; }
+    .mm-buy-price { color:var(--paper-50);font:800 38px var(--font-display);text-align:center;margin-bottom:13px; }
+    .mm-footer { background:var(--espresso-900);color:var(--camel-200);padding:30px 0;font-size:13px; }
+    .mm-footer-inner { display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap; }
+    .mm-footer a { color:var(--camel-200); }
+    @media(max-width:850px) {
+      .mm-hero-grid,.mm-two { grid-template-columns:1fr;gap:34px; }
+      .mm-photo { min-height:380px; }
+      .mm-cards { grid-template-columns:1fr; }
+      .mm-buy-inner { grid-template-columns:1fr; }
+      .mm-buy-inner > div:last-child { justify-self:start; }
+    }
+    @media(max-width:540px) {
+      .mm-container { width:calc(100% - 36px); }
+      .mm-nav { min-height:70px; }
+      .mm-back { font-size:12px; }
+      .mm-hero { padding:50px 0 54px; }
+      .mm-hero h1 { font-size:clamp(42px,12vw,58px); }
+      .mm-subtitle { font-size:17px; }
+      .mm-price { font-size:45px; }
+      .mm-photo { min-height:310px; }
+      .mm-section { padding:58px 0; }
+      .mm-btn { width:100%;box-sizing:border-box; }
+      .mm-buy-inner > div:last-child { width:100%; }
+      .mm-footer-inner { flex-direction:column;align-items:start; }
+    }
+  </style>
+</head>
+<body>
+<header class="mm-topbar">
+  <div class="mm-container mm-nav">
+    <a href="index.html" class="mm-brand" aria-label="Volver a Aitziber Running Coach">
+      <img src="logo-mark-transparent.png" alt="">
+      <span><strong>AITZIBER</strong><small>RUNNING COACH</small></span>
+    </a>
+    <a href="index.html" class="mm-back">← Volver a la web</a>
+  </div>
+</header>
+<main>
+<section class="mm-hero">
+  <div class="mm-container mm-hero-grid">
+    <div>
+      <div class="mm-eyebrow">Programa autoguiado · TrainingPeaks · 21K</div>
+      <h1>Tu próxima <em>media maratón</em> empieza aquí.</h1>
+      <p class="mm-subtitle">12 semanas para preparar tus 21,097 km con una planificación organizada de running, fuerza y mentalidad. Sin improvisaciones y a tu ritmo.</p>
+      <div class="mm-tags"><span class="mm-tag">Running</span><span class="mm-tag">Fuerza específica</span><span class="mm-tag">Mentalidad</span></div>
+      <div class="mm-price-line"><span class="mm-price">80 €</span><span class="mm-price-caption">Pago único<br>Sin suscripción</span></div>
+      <a class="mm-btn" href="https://buy.stripe.com/5kQfZgcrf2F49zs0b19Ve06" rel="noopener noreferrer">Comprar mi programa de 12 semanas →</a>
+      <span class="mm-micro">Pago seguro mediante Stripe · Acceso a través de TrainingPeaks tras confirmación y entrega manual.</span>
+    </div>
+    <div class="mm-photo">
+      <img src="race-urban-white.jpg" alt="Aitziber corriendo una carrera de fondo">
+      <div class="mm-photo-label">Una preparación con estructura.<br>Un objetivo que ilusiona.</div>
+    </div>
+  </div>
+</section>
+<section class="mm-section" id="incluye">
+  <div class="mm-container">
+    <div class="mm-eyebrow">Lo que incluye</div>
+    <h2>Mucho más que salir a correr.</h2>
+    <p class="mm-lead">Un programa diseñado para que tengas una hoja de ruta durante 12 semanas, combinando las piezas fundamentales de la preparación de una media maratón.</p>
+    <div class="mm-cards">
+      <article class="mm-card"><div class="mm-card-kicker">01 / RUNNING</div><h3>Entrena con propósito.</h3><p>Sesiones de carrera organizadas dentro del calendario de TrainingPeaks para seguir una progresión durante tu preparación.</p></article>
+      <article class="mm-card"><div class="mm-card-kicker">02 / FUERZA</div><h3>Construye una base sólida.</h3><p>Trabajo de fuerza específico para corredores, integrado con el entrenamiento de carrera.</p></article>
+      <article class="mm-card"><div class="mm-card-kicker">03 / MENTALIDAD</div><h3>Prepara también la cabeza.</h3><p>Herramientas y propuestas para entrenar la confianza, la constancia y la gestión del reto.</p></article>
+    </div>
+  </div>
+</section>
+<section class="mm-section mm-warm" id="funciona">
+  <div class="mm-container mm-two">
+    <div>
+      <div class="mm-eyebrow">Así funciona</div>
+      <h2>Lo compras una vez. Lo sigues semana a semana.</h2>
+      <p class="mm-lead">No necesitas contratar seguimiento individual para utilizar el programa. Es una planificación autoguiada que consultarás en TrainingPeaks.</p>
+      <div class="mm-callout"><strong>Importante:</strong> este producto es un plan general, no personalizado. No incluye revisiones individuales, ajustes por lesión o circunstancias particulares, ni un plan nutricional.</div>
+    </div>
+    <div class="mm-steps">
+      <div class="mm-step"><span class="mm-step-num">1</span><div><h3>Realiza el pago seguro.</h3><p>Compra el programa de 80 € en Stripe. El importe es de pago único.</p></div></div>
+      <div class="mm-step"><span class="mm-step-num">2</span><div><h3>Usa tu correo de TrainingPeaks.</h3><p>Al pagar, introduce el mismo correo que utilizas o utilizarás en TrainingPeaks. Si aún no tienes cuenta, puedes crear una gratuita.</p></div></div>
+      <div class="mm-step"><span class="mm-step-num">3</span><div><h3>Recibe la planificación.</h3><p>Tras comprobar el pago, te compartiré manualmente el programa en TrainingPeaks. La activación no es inmediata.</p></div></div>
+      <div class="mm-step"><span class="mm-step-num">4</span><div><h3>Empieza tu preparación.</h3><p>Consulta las sesiones en el calendario y sigue la planificación de las 12 semanas.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="mm-section">
+  <div class="mm-container mm-two">
+    <div>
+      <div class="mm-eyebrow">¿Es para ti?</div>
+      <h2>Una guía clara para tus próximos 21K.</h2>
+      <p class="mm-lead">Ideal si ya tienes una base de carrera y buscas una preparación estructurada que puedas seguir de forma autónoma.</p>
+      <ul class="mm-list">
+        <li>Quieres preparar una media maratón con un calendario organizado.</li>
+        <li>Buscas combinar running, fuerza y mentalidad.</li>
+        <li>Prefieres un único pago frente a un servicio de seguimiento individual.</li>
+      </ul>
+    </div>
+    <div class="mm-card">
+      <div class="mm-eyebrow">Antes de comprar</div>
+      <h3>¿Cuándo elegir un plan individual?</h3>
+      <p>Si empiezas desde cero, tienes una lesión, necesitas adaptar la carga a una condición de salud o buscas revisiones y cambios personalizados, este programa general puede no ser la mejor opción.</p>
+      <p style="margin-top:15px">En ese caso puedes consultar mis <a href="index.html#planes" style="color:var(--espresso-700);font-weight:700">servicios de entrenamiento personalizado</a>.</p>
+    </div>
+  </div>
+</section>
+<section class="mm-section mm-warm" id="preguntas">
+  <div class="mm-container">
+    <div class="mm-eyebrow">Preguntas frecuentes</div>
+    <h2>Todo claro antes de empezar.</h2>
+    <div class="mm-faq">
+      <details><summary>¿El programa es personalizado?</summary><p>No. Es un programa general, autoguiado, sin seguimiento ni adaptaciones individuales. Si necesitas ajustes específicos, puedes contratar un servicio personalizado por separado.</p></details>
+      <details><summary>¿Incluye un plan de nutrición?</summary><p>No. El precio de 80 € incluye únicamente la preparación de running, fuerza y mentalidad descrita en esta página.</p></details>
+      <details><summary>¿Necesito pagar TrainingPeaks Premium?</summary><p>El acceso al calendario se realiza mediante TrainingPeaks. Puedes abrir una cuenta gratuita; determinadas funciones avanzadas de la plataforma podrían requerir suscripción.</p></details>
+      <details><summary>¿Cómo recibiré mi programa?</summary><p>Una vez confirmado el pago, lo compartiré manualmente en TrainingPeaks utilizando el correo facilitado durante la compra. No es una descarga ni una activación inmediata.</p></details>
+      <details><summary>¿Es adecuado para cualquier nivel?</summary><p>Está pensado para personas que ya tienen una base de carrera y pueden seguir una planificación general. No sustituye una evaluación individual y no es adecuado para todas las situaciones.</p></details>
+      <details><summary>¿Cómo puedo consultar una duda antes de comprar?</summary><p>Escríbeme por <a href="https://www.instagram.com/aitzibermendibil/" rel="noopener noreferrer" target="_blank">Instagram</a> o utiliza el <a href="index.html#contacto">formulario de contacto</a>.</p></details>
+    </div>
+  </div>
+</section>
+<section class="mm-buy">
+  <div class="mm-container mm-buy-inner">
+    <div><div class="mm-eyebrow">Tu objetivo: 21,097 km</div><h2>Empieza a preparar tu media maratón.</h2><p>12 semanas · Running + fuerza + mentalidad · TrainingPeaks · Programa autoguiado sin seguimiento individual.</p></div>
+    <div><div class="mm-buy-price">80 €</div><a class="mm-btn" href="https://buy.stripe.com/5kQfZgcrf2F49zs0b19Ve06" rel="noopener noreferrer">Comprar ahora →</a></div>
+  </div>
+</section>
+</main>
+<footer class="mm-footer">
+  <div class="mm-container mm-footer-inner"><span>© 2026 Aitziber Running Coach · Programa digital autoguiado</span><span>¿Dudas? <a href="index.html#contacto">Contacta conmigo</a> · <a href="https://www.instagram.com/aitzibermendibil/" target="_blank" rel="noopener noreferrer">Instagram</a></span></div>
+</footer>
+</body>
+</html>
