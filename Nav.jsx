@@ -112,6 +112,12 @@ function Nav({ onNavigate }) {
                 {label}
               </a>
             ))}
+            <a
+              href="media-maraton.html"
+              style={{ ...linkStyle, color: "var(--espresso-800)", background: "var(--paper-200)", fontWeight: 800 }}
+            >
+              Plan 21K
+            </a>
           </div>
           <a href="#contacto" className="btn btn-primary nav-cta" style={{ marginLeft: 12 }}
             onClick={(e) => { e.preventDefault(); onNavigate?.("contacto"); }}
