@@ -105,7 +105,11 @@ function Footer() {
           }}
         >
           <span>© 2026 Aitziber Running Coach</span>
-          <span>Método aplicado · seguimiento real</span>
+          <span style={{ display: "inline-flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
+            <a href="aviso-legal.html" style={{ color: "var(--camel-300)", textDecoration: "underline" }}>Aviso legal</a>
+            <span aria-hidden>·</span>
+            <a href="privacidad-media-maraton.html" style={{ color: "var(--camel-300)", textDecoration: "underline" }}>Privacidad de compras</a>
+          </span>
         </div>
       </div>
     </footer>
