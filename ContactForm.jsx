@@ -377,7 +377,7 @@ function ContactForm() {
 
             <Field
               label="Cuéntame tu situación"
-              hint="Tu objetivo, tu nivel actual, lo que has probado, lo que te frena. Cuanto más concreto, mejor."
+              hint="Tu objetivo y tu nivel de running. No incluyas datos médicos o de salud en este formulario."
               required
             >
               <textarea
@@ -400,10 +400,12 @@ function ContactForm() {
               color: "var(--fg-muted)",
               lineHeight: 1.45,
             }}>
-              <input type="checkbox" required style={{ marginTop: 3, accentColor: "var(--camel-600)" }} />
+              <input type="checkbox" name="aceptacion_privacidad" value="Aceptada" required style={{ marginTop: 3, accentColor: "var(--camel-600)" }} />
               <span>
-                Acepto la política de privacidad. Tus datos solo se usan para
-                contactarte sobre los servicios que pides.
+                He leído y acepto la{" "}
+                <a href="privacidad-media-maraton.html" target="_blank" rel="noopener noreferrer" style={{ color: "var(--espresso-800)", textDecoration: "underline", fontWeight: 700 }}>
+                  política de privacidad
+                </a>. Mis datos se utilizarán para responder a mi consulta.
               </span>
             </label>
 
