@@ -265,6 +265,41 @@ function PlanCards() {
           })}
         </div>
 
+        {/* PROGRAMA AUTOGUIADO: compra directa, diferente al seguimiento personalizado */}
+        <aside
+          aria-label="Programa autoguiado de media maratón"
+          style={{
+            marginBottom: 72,
+            padding: "32px",
+            borderRadius: "var(--r-xl)",
+            background: "var(--espresso-800)",
+            color: "var(--paper-50)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 24,
+            flexWrap: "wrap",
+            boxShadow: "var(--shadow-md)",
+          }}
+        >
+          <div style={{ flex: "1 1 330px" }}>
+            <div className="eyebrow on-dark">También disponible · Sin seguimiento</div>
+            <h3 style={{ color: "var(--paper-50)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(25px,3vw,34px)", margin: "8px 0 10px", lineHeight: 1.1 }}>
+              Plan de media maratón · 12 semanas
+            </h3>
+            <p style={{ margin: 0, color: "var(--camel-100)", fontSize: 15, lineHeight: 1.6 }}>
+              Running + fuerza + mentalidad, organizado en TrainingPeaks.
+              Programa general autoguiado, diferente de mis servicios personalizados.
+            </p>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
+            <div style={{ font: "800 32px var(--font-display)", whiteSpace: "nowrap" }}>80 €</div>
+            <a href="media-maraton.html" className="btn btn-on-dark" style={{ whiteSpace: "nowrap" }}>
+              Ver el programa <span aria-hidden style={{ fontSize: 18 }}>→</span>
+            </a>
+          </div>
+        </aside>
+
         {/* SERVICIOS PUNTUALES */}
         <div
           style={{
