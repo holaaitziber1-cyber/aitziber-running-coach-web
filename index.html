@@ -9,9 +9,59 @@
 <link rel="icon" href="logo-mark-transparent.png" />
 <link rel="stylesheet" href="colors_and_type.css" />
 <link rel="stylesheet" href="site.css" />
+<style>
+/* Alternativa accesible cuando React/Babel no puede cargar. Al aparecer la web normal, se oculta. */
+#root:not(:empty) + #seo-fallback { display: none; }
+#seo-fallback { font-family: var(--font-body), system-ui, sans-serif; color: var(--espresso-900, #2a1b10); background: var(--paper-100, #f6f1e8); }
+#seo-fallback .seo-fallback-wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+#seo-fallback .seo-fallback-hero { padding: 85px 0; background: var(--espresso-900, #2a1b10); color: var(--paper-50, #fff); }
+#seo-fallback .seo-fallback-kicker { color: var(--camel-300, #d5ac77); font-size: 12px; font-weight: 700; letter-spacing: .15em; }
+#seo-fallback h1 { color: inherit; font-size: clamp(34px,5vw,64px); line-height: 1.1; max-width: 850px; margin: 18px 0 22px; }
+#seo-fallback p { font-size: 17px; line-height: 1.75; max-width: 800px; }
+#seo-fallback h2 { font-size: clamp(24px,3vw,35px); line-height: 1.2; margin: 36px 0 12px; }
+#seo-fallback .seo-fallback-content { padding: 45px 0 70px; }
+#seo-fallback .seo-fallback-action { display: inline-block; padding: 15px 23px; border-radius: 32px; color: var(--espresso-900,#2a1b10); background: var(--camel-300,#d5ac77); text-decoration: none; font-weight: 700; margin-top: 14px; }
+#seo-fallback .seo-fallback-action-alt { background: var(--espresso-800,#3d2a1d); color: #fff; }
+#seo-fallback .seo-fallback-footer { padding: 30px 0; background: var(--espresso-900,#2a1b10); color: #fff; font-size: 13px; }
+#seo-fallback .seo-fallback-footer a { color: inherit; }
+@media(max-width:720px) { #seo-fallback .seo-fallback-hero { padding: 58px 0 !important; } #seo-fallback .seo-fallback-content { padding: 35px 0 !important; } }
+</style>
 </head>
 <body>
 <div id="root"></div>
+<!-- Contenido HTML de respaldo: se muestra si la aplicación JavaScript no llega a cargar. -->
+<main id="seo-fallback" aria-label="Servicios de Aitziber Running Coach">
+  <section class="seo-fallback-hero">
+    <div class="seo-fallback-wrap">
+      <p class="seo-fallback-kicker">AITZIBER RUNNING COACH · ENTRENAMIENTO Y NUTRICIÓN</p>
+      <h1>Entrenadora de running online y nutricionista deportiva para corredores</h1>
+      <p>Prepara tus objetivos de running con una planificación de entrenamiento y nutrición adaptada a ti. Trabajo con corredores y corredoras que preparan un 10K, una media maratón, un maratón o carreras de trail.</p>
+      <a class="seo-fallback-action" href="mailto:holaaitziber1@gmail.com?subject=Informaci%C3%B3n%20entrenamiento%20y%20nutrici%C3%B3n%20running">Solicitar información</a>
+    </div>
+  </section>
+  <section class="seo-fallback-content">
+    <div class="seo-fallback-wrap">
+      <h2>Entrenamiento de running personalizado</h2>
+      <p>Planificación online de rodajes, series, fuerza, recuperación y competiciones en función de tu nivel, disponibilidad y evolución. Desde mejorar tus marcas en 10K hasta preparar 21K o 42K.</p>
+      <h2>Nutrición deportiva para corredores y corredoras</h2>
+      <p>Asesoramiento nutricional para entrenar, recuperar y competir con una estrategia adaptada. Alimentación para el rendimiento, hidratación, geles, hidratos de carbono y nutrición antes, durante y después de una carrera.</p>
+      <h2>Entrenamiento y nutrición: un enfoque conjunto</h2>
+      <p>Si buscas una preparación completa, puedes trabajar el entrenamiento y la nutrición de manera coordinada y personalizada, con un objetivo: progresar con constancia y cuidar tu salud.</p>
+      <h2>Programa de media maratón de 12 semanas</h2>
+      <p>También puedes comprar un plan general autoguiado de 12 semanas para preparar tus próximos 21K, con running, fuerza y mentalidad. Este programa digital no incluye seguimiento individual ni plan de nutrición.</p>
+      <a class="seo-fallback-action seo-fallback-action-alt" href="media-maraton.html">Ver programa de media maratón · 80 €</a>
+      <h2>Contacta con Aitziber</h2>
+      <p>¿Quieres saber qué servicio encaja mejor contigo? Escríbeme a <a href="mailto:holaaitziber1@gmail.com">holaaitziber1@gmail.com</a>.</p>
+    </div>
+  </section>
+  <footer class="seo-fallback-footer">
+    <div class="seo-fallback-wrap">
+      Aitziber Running Coach ·
+      <a href="aviso-legal.html">Aviso legal</a> ·
+      <a href="privacidad-media-maraton.html">Privacidad</a>
+    </div>
+  </footer>
+</main>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
