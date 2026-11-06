@@ -265,6 +265,12 @@ function PlanCards() {
                       Conoce cómo funciona el entrenamiento online
                     </a>
                   )}
+                  {p.id === "nutri" && (
+                    <a href="nutricionista-deportiva-corredores.html"
+                      style={{ display: "block", marginTop: 12, textAlign: "center", fontSize: 13, fontWeight: 700, color: "var(--espresso-700)", textDecoration: "underline", textUnderlineOffset: 3 }}>
+                      Conoce mi servicio de nutrición para corredores
+                    </a>
+                  )}
                 </div>
               </article>
             );
