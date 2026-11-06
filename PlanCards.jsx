@@ -259,6 +259,12 @@ function PlanCards() {
                     {p.cta}
                     <span style={{ fontSize: 18 }}>→</span>
                   </a>
+                  {p.id === "entreno" && (
+                    <a href="entrenadora-running-online.html"
+                      style={{ display: "block", marginTop: 12, textAlign: "center", fontSize: 13, fontWeight: 700, color: "var(--espresso-700)", textDecoration: "underline", textUnderlineOffset: 3 }}>
+                      Conoce cómo funciona el entrenamiento online
+                    </a>
+                  )}
                 </div>
               </article>
             );
