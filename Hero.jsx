@@ -189,6 +189,17 @@ function Hero({ showScriptNote = true }) {
                 — Aitzi
               </span>
             </div>
+            <nav aria-label="Servicios especializados"
+              style={{ display: "flex", flexWrap: "wrap", columnGap: 24, rowGap: 9, marginTop: 17 }}>
+              <a href="entrenadora-running-online.html"
+                style={{ color: "var(--camel-100)", fontSize: 13, lineHeight: 1.5, textDecoration: "underline", textUnderlineOffset: 4 }}>
+                Entrenadora de running online
+              </a>
+              <a href="nutricionista-deportiva-corredores.html"
+                style={{ color: "var(--camel-100)", fontSize: 13, lineHeight: 1.5, textDecoration: "underline", textUnderlineOffset: 4 }}>
+                Nutrición deportiva para corredores
+              </a>
+            </nav>
           </div>
 
           {/* RIGHT — photo stack */}
