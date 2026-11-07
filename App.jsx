@@ -26,6 +26,17 @@ function App() {
     }
   }, [tweaks.accentPalette]);
 
+  // Permite abrir directamente secciones de la web desde páginas SEO externas.
+  React.useEffect(() => {
+    const sectionId = decodeURIComponent(window.location.hash.slice(1));
+    if (!sectionId) return;
+    const el = document.getElementById(sectionId);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top: Math.max(0, y), behavior: "auto" });
+    }
+  }, []);
+
   const onNavigate = (id) => {
     if (id === "top") {
       window.scrollTo({ top: 0, behavior: "smooth" });
