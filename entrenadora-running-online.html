@@ -81,6 +81,15 @@
     :focus-visible{outline:3px solid var(--glacier-700);outline-offset:4px}
     @media(max-width:800px){.svc-hero-inner{grid-template-columns:1fr;gap:30px}.svc-grid{grid-template-columns:1fr}.svc-steps{grid-template-columns:1fr}}
     @media(max-width:520px){.svc-wrap{padding-inline:18px}.svc-nav{min-height:70px}.svc-navlinks{gap:9px}.svc-navlinks a:first-child{display:none}.svc-hero{padding:58px 0}.svc-section{padding:58px 0}.svc-hero-card{padding:24px}.svc-navlinks .svc-button{padding:12px 15px;font-size:12px}h1{font-size:clamp(41px,10vw,56px)}}
+
+    .svc-expert{background:var(--paper-100);padding:76px 0}
+    .svc-expert-grid{display:grid;grid-template-columns:minmax(210px,.7fr) 1.3fr;gap:55px;align-items:center}
+    .svc-expert-image{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 35%;border-radius:26px;box-shadow:0 20px 40px rgba(42,27,16,.12)}
+    .svc-expert h2{margin:12px 0 18px}
+    .svc-expert p{max-width:690px;font-size:16px;line-height:1.75;margin:10px 0}
+    .svc-expert-credentials{display:flex;gap:10px;flex-wrap:wrap;margin:23px 0 18px}
+    .svc-expert-credentials span{display:inline-block;border:1px solid var(--paper-300);padding:8px 13px;border-radius:999px;font:700 12px var(--font-display);color:var(--espresso-800)}
+    @media(max-width:800px){.svc-expert-grid{grid-template-columns:1fr;gap:26px}.svc-expert-image{max-width:400px;max-height:460px}.svc-expert{padding:55px 0}}
   </style>
 </head>
 <body>
@@ -157,6 +166,23 @@
         <details><summary>¿El servicio es online?</summary><p>Sí. El entrenamiento se organiza online y utilizamos TrainingPeaks como herramienta para las sesiones.</p></details>
         <details><summary>¿Incluye un plan de nutrición?</summary><p>El servicio de entrenamiento y el de <a href="nutricionista-deportiva-corredores.html">nutrición deportiva para corredores</a> pueden contratarse por separado. Si buscas ambos, también podemos valorar el trabajo conjunto.</p></details>
         <details><summary>¿Qué diferencia hay con el programa de media maratón de 80 €?</summary><p>El servicio de entrenamiento es personalizado y con seguimiento. El programa de 12 semanas es general, autoguiado y no incluye adaptaciones individuales.</p></details>
+      </div>
+    </div>
+  </section>
+  <section class="svc-expert" id="quien-te-acompana">
+    <div class="svc-wrap svc-expert-grid">
+      <img class="svc-expert-image" src="summit-jump.jpg" alt="Aitziber, entrenadora de running y dietista especializada en corredores" loading="lazy">
+      <div>
+        <span class="svc-overline">Conoce a la profesional</span>
+        <h2>Hola, soy Aitziber.</h2>
+        <p>Soy entrenadora de running y dietista especializada en corredores. Mi trabajo combina planificación deportiva y nutrición aplicada al ejercicio para acompañar a personas con distintos niveles y objetivos.</p>
+        <p>También soy corredora: conozco lo que supone preparar una competición y la importancia de adaptar las decisiones a la vida real, las sensaciones y la recuperación. Mi enfoque parte de entender tu contexto antes de proponerte una estrategia.</p>
+        <div class="svc-expert-credentials">
+          <span>Técnica Superior en Dietética</span>
+          <span>Técnica Superior en Actividad Física</span>
+          <span>Formación de máster en rendimiento deportivo</span>
+        </div>
+        <a class="svc-button svc-button-dark" href="index.html">Conoce más sobre mí y mis servicios</a>
       </div>
     </div>
   </section>
