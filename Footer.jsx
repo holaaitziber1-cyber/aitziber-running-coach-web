@@ -1,5 +1,20 @@
 /* global React */
 
+// Enlaces reales a los servicios, en lugar de enlaces vacíos que no navegan.
+const FOOTER_DESTINATIONS = {
+  "Entrenamiento": "entrenadora-running-online.html",
+  "Nutrición": "nutricionista-deportiva-corredores.html",
+  "Estrategia de carrera": "#metodo",
+  "Seguimiento": "#planes",
+  "Entrenamiento + Nutrición": "#planes",
+  "Sólo entrenamiento": "entrenadora-running-online.html",
+  "Sólo nutrición": "nutricionista-deportiva-corredores.html",
+  "Consultas puntuales": "#planes",
+  "holaaitziber1@gmail.com": "mailto:holaaitziber1@gmail.com",
+  "@aitzibermendibil": "https://www.instagram.com/aitzibermendibil/",
+  "Online · ESP": "#contacto",
+};
+
 function Footer() {
   return (
     <footer
@@ -71,7 +86,7 @@ function Footer() {
                 {links.map((l) => (
                   <li key={l}>
                     <a
-                      href="#"
+                      href={FOOTER_DESTINATIONS[l]}
                       style={{
                         fontFamily: "var(--font-body)",
                         fontSize: 14,
