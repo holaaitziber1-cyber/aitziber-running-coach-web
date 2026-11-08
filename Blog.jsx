@@ -4,8 +4,9 @@ const POSTS = [
   {
     cat: "Nutrición",
     tag: "plate",
-    read: "7 min",
+    read: "5 min",
     title: "Cómo cargar hidratos las 48 horas antes de una maratón",
+    href: "carga-hidratos-maraton.html",
     excerpt:
       "Olvídate del plato de pasta gigante la noche antes. Te explico el reparto real por días, cantidad y tipo según tu peso y objetivo.",
     accent: "var(--camel-400)",
@@ -13,8 +14,9 @@ const POSTS = [
   {
     cat: "Estrategia de carrera",
     tag: "route",
-    read: "10 min",
+    read: "5 min",
     title: "Geles y sales: cómo elegir, cómo tolerarlos y cuándo tomarlos",
+    href: "geles-sales-running.html",
     excerpt:
       "El gel correcto es el que te sienta bien. Te dejo un protocolo para encontrar el tuyo antes del día clave — sin sustos en el km 25.",
     accent: "var(--glacier-500)",
@@ -22,8 +24,9 @@ const POSTS = [
   {
     cat: "Entrenamiento",
     tag: "stopwatch",
-    read: "8 min",
+    read: "5 min",
     title: "Por qué entrenar en zona 2 es la base que casi nadie respeta",
+    href: "entrenamiento-zona-2-running.html",
     excerpt:
       "La mayoría corre todo a un ritmo medio incómodo. Aquí te enseño cómo identificar tu zona 2 real y qué le pasa a tu cuerpo cuando la respetas.",
     accent: "var(--moss-500)",
@@ -83,7 +86,7 @@ function Blog({ onNavigate }) {
           {POSTS.map((p, i) => (
             <a
               key={i}
-              href="#blog"
+              href={p.href}
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -200,7 +203,7 @@ function Blog({ onNavigate }) {
           display: "flex",
           justifyContent: "center",
         }}>
-          <a href="#blog" className="btn btn-ghost" style={{
+          <a href="blog.html" className="btn btn-ghost" style={{
             color: "var(--espresso-800)",
             borderBottom: "1px solid var(--paper-300)",
             borderRadius: 0,
