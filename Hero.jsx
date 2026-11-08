@@ -218,6 +218,8 @@ function Hero({ showScriptNote = true }) {
               <img
                 src="race-urban-white.jpg"
                 alt="Aitziber corriendo el maratón de Zúrich"
+                decoding="async"
+                fetchPriority="high"
                 style={{
                   width: "100%",
                   height: "100%",
@@ -346,6 +348,7 @@ function Hero({ showScriptNote = true }) {
               <img
                 src="trail-uphill.jpg"
                 alt="Aitziber subiendo trail de montaña"
+                decoding="async"
                 style={{
                   width: "100%",
                   height: "100%",
