@@ -146,6 +146,8 @@ function PlanCards() {
                   <img
                     src="logo-mark-transparent.png"
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                     aria-hidden
                     style={{
                       position: "absolute",
