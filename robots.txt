@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://holaaitziber1-cyber.github.io/aitziber-running-coach-web/sitemap.xml
+Sitemap: https://aitziberrunningcoach.es/sitemap.xml
