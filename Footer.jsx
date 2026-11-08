@@ -44,6 +44,8 @@ function Footer() {
               <img
                 src="logo-mark-transparent.png"
                 alt="Aitziber"
+                loading="lazy"
+                decoding="async"
                 style={{ width: 56, height: 56 }}
               />
               <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
