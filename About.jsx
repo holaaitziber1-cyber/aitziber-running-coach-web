@@ -86,6 +86,8 @@ function About() {
               <img
                 src="summit-jump.jpg"
                 alt="Aitziber en la cima — Embalse de Yesa"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: "100%",
                   height: "100%",
@@ -98,6 +100,8 @@ function About() {
             <img
               src="logo-mark-transparent.png"
               alt=""
+              loading="lazy"
+              decoding="async"
               aria-hidden
               className="about-watermark"
               style={{
